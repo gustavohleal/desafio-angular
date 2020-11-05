@@ -1,0 +1,148 @@
+
+<div id="main-div">
+  <!-- Rotação -->
+  <div  id="rotations" class="layout-align score-meter">
+     
+    <svg >
+      <circle  cx="140" cy="140" r="140"></circle>
+      <circle [ngStyle]="{'stroke-dashoffset': speed}" cx="140" cy="140" r="140"></circle>
+    </svg>
+    
+    <div class="scorer-tick" id="scorer-tick-1">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="scorer-text-1">0</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-2">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-2">1</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-3">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-3">2</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-4">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-4">3</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-5">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-5">4</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-6">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-6">5</p>
+    </div>
+    <div class="scorer-tick" id="rotations-tick-7">
+      <div class="scorer-point"></div>
+      <p class="scorer-text" id="rotations-text-7">6</p>
+    </div>
+
+    <div class="inner-circle">
+      <p>P</p>
+    </div>
+    <div  id="rotations-main-tick" 
+            class="scorer-main-tick" 
+            [ngStyle] = "{'transform': 'rotate('+ rotate + 'deg)'}">
+    </div>
+
+  </div>
+
+
+  <div id="panel-center" class="layout-align">
+    <div id="panel-top-icons">
+      <span class="material-icons white-icon">
+        explore
+      </span>
+      <div id="icons-right">
+        <span  class="material-icons white-icon">
+          add_road
+        </span>
+        <div class="panel-text">11ºC</div>
+      </div>
+    </div>
+    <div id="panel-middle-icons"></div>
+    <div id="panel-bottom-icons">
+        <span  class="material-icons white-icon">
+          airline_seat_recline_normal
+          airline_seat_recline_normal
+          airline_seat_recline_normal
+        </span>
+        <span class="material-icons red-icon">
+          no_encryption
+        </span>
+        <span  class="material-icons yellow-icon">
+          add_road
+        </span> 
+        <div class="panel-text">8km</div>
+      
+
+    </div>
+
+
+
+  </div>
+  
+  <!-- Velocímetro -->
+    <div  id="speedometer" class="layout-align score-meter">
+     
+      <svg >
+        <circle cx="140" cy="140" r="140"></circle>
+        <circle [ngStyle]="{'stroke-dashoffset': speed}"  cx="140" cy="140" r="140"></circle>
+
+        <!--  -->
+      </svg>
+      
+      <div class="scorer-tick" id="scorer-tick-1">
+        
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-1">0</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-2">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-2">20</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-3">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-3">40</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-4">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-4">60</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-5">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-5">100</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-6">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-6">140</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-7">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-7">180</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-8">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-8">220</p>
+      </div>
+      <div class="scorer-tick" id="scorer-tick-9">
+        <div class="scorer-point"></div>
+        <p class="scorer-text" id="scorer-text-9">260</p>
+      </div>
+
+   
+      <div class="inner-circle">
+      </div>
+      <div  id="speedometer-main-tick" 
+            class="scorer-main-tick" 
+            [ngStyle] = "{'transform': 'rotate('+ rotate + 'deg)'}">
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- Scorer 3 Ends -->
+
+ 
+
+ 

@@ -1,0 +1,16 @@
+  <div class="form">
+    <form [formGroup]="testForm" (keydown.enter)="onSubmit()" (ngSubmit)="onSubmit()" id="testForm" class="form">
+      <ng-template [ngIf]="inputType">
+        <div *ngFor = "let form of formOptions">
+          <label> {{ form.titulo }} </label>
+          <input  *ngIf="checkType(form.tipo)" type={{form.tipo}} formControlName={{form.titulo}} value={{form.valor}}/>
+          <select *ngIf="!checkType(form.tipo)">
+            <option *ngFor = "let option of form.opcoes">{{option}}</option>
+          </select>
+        </div>
+      </ng-template>
+      
+    </form>
+  </div>
+
+

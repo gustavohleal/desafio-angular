@@ -1,0 +1,424 @@
+
+$rot-tick-1: -35deg;
+$rot-tick-2: 0deg;
+$rot-tick-3: 45deg;
+$rot-tick-4: 90deg;
+$rot-tick-5: 135deg;
+$rot-tick-6: 180deg;
+$rot-tick-7: 215deg;
+
+
+$speed-tick-1: -35deg;
+$speed-tick-2: -5deg;
+$speed-tick-3: 25deg;
+$speed-tick-4: 55deg;
+$speed-tick-5: 90deg;
+$speed-tick-6: 125deg;
+$speed-tick-7: 155deg;
+$speed-tick-8: 185deg;
+$speed-tick-9: 215deg;
+
+#main-div{
+  width: 860px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top-left-radius: 360px;
+  border-top-right-radius: 360px;
+  border-bottom-left-radius: 240px;
+  border-bottom-right-radius: 240px;
+  background-color: rgb(15, 15, 15);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 761px){
+  .layout-align{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+  }
+  #tesla-align{
+     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+} 
+@media only screen and (max-width: 760px){
+  .layout-align{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 25px 0;
+  }
+  #tesla-align{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.75);
+  }
+} 
+/* Just for very small screen sizes */
+@media only screen and (max-width: 355px){
+  .layout-align{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    transform: scale(0.8);
+  }
+  #tesla-align{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.60);
+  }
+} 
+
+
+/* CSS for 3rd Meter */
+.score-meter{
+  transform: scale(0.8);
+  //margin: 100px;
+}
+.score-meter{
+  width: 280px;
+  height: 280px;
+  // border-top-left-radius: 360px;
+  // border-top-right-radius: 360px;
+  border-radius:50%;
+  border: transparent;
+  position: relative;
+  background-color: #090909;
+  overflow: hidden !important;
+}
+
+#panel-center {
+  transform: scale(0.8);
+  width: 300px;
+  height: 280px;
+  // border-top-left-radius: 360px;
+  // border-top-right-radius: 360px;
+  display: flex;
+  flex-direction: column;
+  border: transparent;
+  position: relative;
+  overflow: hidden !important;
+  position: relative;
+}
+#panel-top-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid #3d3d3d;
+}
+
+
+#panel-middle-icons {
+  width: 100%;
+  height: 100%;
+} 
+#panel-bottom-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  align-items: center;
+  border-top: 2px solid #3d3d3d;
+  
+
+}
+
+#icons-right{
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+.panel-text {
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.score-meter svg {
+  width: 280px;
+  height: 280px;
+  z-index:14;
+}
+
+#speedometer {
+  right: 80px;
+}
+#speedometer svg circle {
+  width: 280px;
+  height: 280px;
+  fill: none;
+  stroke-width: 5;
+  stroke: rgb(51, 51, 51);
+  stroke-dasharray:  880;
+  stroke-dashoffset: 880;
+  z-index:1;
+}
+
+#speedometer svg circle:nth-child(1){
+  
+  stroke-dashoffset: 0;
+  stroke:rgb(51, 51, 51);
+  
+}
+#speedometer svg circle:nth-child(2){
+  transform-origin: center center;
+  transform: rotate(145deg);
+  stroke-dashoffset: 275;
+  stroke: rgba(17,125,255, 1);
+}
+
+#rotations {
+  left: 80px;
+}
+#rotations svg circle {
+  width: 280px;
+  height: 280px;
+  fill: none;
+  stroke-width: 5;
+  stroke: rgb(51, 51, 51);
+  stroke-dasharray:  880;
+  stroke-dashoffset: 880;
+  z-index:1;
+}
+
+#rotations svg circle:nth-child(1){
+  
+  stroke-dashoffset: 0;
+  stroke:rgb(51, 51, 51);
+  
+}
+#rotations svg circle:nth-child(2){
+  transform-origin: center center;
+  transform: rotate(145deg);
+  stroke-dashoffset: 880;
+  stroke: rgba(17,125,255, 1);
+  transition-duration: 5s;
+}
+
+
+.inner-circle{
+  z-index: 15;
+  position: absolute !important;
+  color: #fff;
+  text-align: center;
+  width: 60%;
+  height: 60%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-top-left-radius: 360px;
+  border-top-right-radius: 360px;
+  display: flex;
+  border: 4px solid transparent;
+  border-radius:50%;
+  position: relative;
+  background: 
+        linear-gradient(to right, black, black), 
+        linear-gradient(90deg, rgba(122, 102, 118, 2), rgba(122, 102, 118, .3), rgba(122, 102, 118, 0.8)); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.scorer-main-tick{
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  width: 140px;
+  height: 5px;
+  background-image: linear-gradient(to right, rgba(17,125,255, 1), rgba(17,125,255, 0));
+  transform-origin: right center;
+  transform-origin: right center;
+  transition-duration: 5s;
+  z-index: 16;
+ 
+}
+
+#speedometer-main-tick{
+  transform: rotate(-35deg);
+}
+
+#rotations-main-tick{
+  transform: rotate(-35deg);
+}
+
+.scorer-tick{
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  width: 140px;
+  height: 10px;
+  transform-origin: right center;
+  
+}
+
+.scorer-point{
+  width: 6px;
+  height: 6px;
+  margin-top: 2px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: #FFF;
+  
+}
+
+.scorer-text{
+  position: absolute;
+  margin-left: 7px;
+  margin-top: 5px;
+  bottom: -20px;
+  left: 10px;
+  color: #FFF; 
+  display: block;
+  transform-origin: center;
+  
+}
+
+//Conta-giros
+
+#rotations-tick-1{
+  transform: rotate($rot-tick-1);
+}
+#rotations-tick-2{
+  transform: rotate($rot-tick-2);
+}
+#rotations-tick-3{
+  transform: rotate($rot-tick-3);
+}
+#rotations-tick-4{
+  transform: rotate($rot-tick-4);
+}
+#rotations-tick-5{
+  transform: rotate($rot-tick-5);
+ }
+#rotations-tick-6{
+  transform: rotate($rot-tick-6);
+}
+#rotations-tick-7{
+  transform: rotate($rot-tick-7);
+}
+
+#rotations-text-1{
+  transform: rotate(-$rot-tick-1);
+}
+#rotations-text-2{
+  transform: rotate(-$rot-tick-2);
+}
+#rotations-text-3{
+  transform: rotate(-$rot-tick-3);
+}
+#rotations-text-4{
+  transform: rotate(-$rot-tick-4);
+}
+#rotations-text-5{
+  transform: rotate(-$rot-tick-5);
+}
+#rotations-text-6{
+  transform: rotate(-$rot-tick-6);
+}
+#rotations-text-7{
+  transform: rotate(-$rot-tick-7);
+}
+
+// Velocímetro
+
+#scorer-tick-1{
+  transform: rotate($speed-tick-1);
+}
+#scorer-tick-2{
+  transform: rotate($speed-tick-2);
+}
+#scorer-tick-3{
+  transform: rotate($speed-tick-3);
+}
+#scorer-tick-4{
+  transform: rotate($speed-tick-4);
+}
+#scorer-tick-5{
+  transform: rotate($speed-tick-5);
+ }
+#scorer-tick-6{
+  transform: rotate($speed-tick-6);
+}
+#scorer-tick-7{
+  transform: rotate($speed-tick-7);
+}
+#scorer-tick-8{
+  transform: rotate($speed-tick-8);
+}
+#scorer-tick-9{
+  transform: rotate($speed-tick-9);
+}
+
+#scorer-text-1{
+  transform: rotate(-$speed-tick-1);
+}
+#scorer-text-2{
+  transform: rotate(-$speed-tick-2);
+}
+#scorer-text-3{
+  transform: rotate(-$speed-tick-3);
+}
+#scorer-text-4{
+  transform: rotate(-$speed-tick-4);
+}
+#scorer-text-5{
+  transform: rotate(-$speed-tick-5);
+}
+#scorer-text-6{
+  transform: rotate(-$speed-tick-6);
+}
+#scorer-text-7{
+  transform: rotate(-$speed-tick-7);
+}
+#scorer-text-8{
+  transform: rotate(-$speed-tick-8);
+}
+#scorer-text-9{
+  transform: rotate(-$speed-tick-9);
+}
+
+#tesla-logo{
+  width: 80px;height:80px;
+  width: 70%;
+  padding-left: 15%;
+  height: 70%;
+  padding-top: 15%;
+  height: auto;
+  margin: 0;
+}
+#speed-kmph-8{
+  color:#fff;
+  width: 20%;
+  height: 10%;
+  font-size: 30px;
+}
+
+.white-icon {
+  color: white;
+}
+.red-icon {
+  color: rgb(173, 27, 27);
+}
+
+.yellow-icon {
+  color: rgb(209, 206, 44);
+}
+
+
