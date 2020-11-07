@@ -33,4 +33,10 @@ export class FormService {
         map(data=>data)
       )    
   }
+
+  getFileURL(name:string){
+    let url = `${this.baseUrl}/arquivo/${name}`;
+
+    return url;
+  }
 }

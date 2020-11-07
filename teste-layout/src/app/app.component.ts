@@ -9,7 +9,7 @@ import{ Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teste-layout';
+  title = 'Desafio Angular';
 
   constructor(
     private activatedRoute:ActivatedRoute,

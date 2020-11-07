@@ -1,0 +1,161 @@
+{
+  "openapi": "3.0.1",
+  "host": "localhost:3333",
+  "basePath": "/",  
+  "produces": [
+    "application/json"
+  ],
+  "authorizations": {},
+  "info": {
+    "title": "Hammer - Teste de admissão",
+    "description": "Teste de capacitação",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/formulario": {
+      "get": {
+        "tags": [
+          "Formulário"
+        ],
+        "summary": "Popula formulário",
+        "description": "Retorna array de objetos descrevendo um formulário.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "titulo": {
+                      "type": "string",
+                      "example": "Nome",
+                      "description": "titulo do campo"
+                    },
+                    "tipo": {
+                      "type": "string",
+                      "example": "NUMERICO",
+                      "description": "tipo do campo",
+                      "enum": [
+                        "number", "text", "select", "file"
+                      ]
+                      
+                    },
+                    "valor": {
+                      "type": "string",
+                      "example": "string",
+                      "description": "valor de acordo com o tipo do campo, podendo ser um numero ou uma string"
+                    },
+                    "opcoes": {
+                      "type": "array",
+                      
+                      "items": {
+                        "type": "string",
+                        "example": "string"
+                      }
+                    }
+                  }
+                }
+                
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arquivo/{nome}": {
+      "get": {
+        "tags": [
+          "Formulário"
+        ],
+        "summary": "Download do arquivo através do nome, o qual é recebido por campos do tipo arquivo do formulário",
+        "description": "Retorna array de objetos descrevendo um formulário.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nome",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parameter description in Markdown."
+          }
+        ],
+        "responses": {
+            "200": {
+              "description": "Nome Válido",
+              "content": {
+                "schema": {
+                  "type": "file"
+                }
+            }
+          }
+        }
+      }
+    },
+    "/tabela": {
+      "get": {
+        "tags": [
+          "Tabela"
+        ],
+        "summary": "Consulta de uma tabela, o array de resposta pode conter até todas as props descritas, mas nenhuma é obrigatória.A tabela deve se adequar ao array de objetos recebidos e exibir apenas colunas das propriedades recebidas.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "title": "TipoRow",
+                  "properties": {
+                    "usuário": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "paramêtro": {
+                      "type": "number",
+                      "example": 0                 
+                    },
+                    "tipolinha": {
+                      "type": "number",
+                      "example": 0                  
+                    },
+                    "transmissão": {
+                      "type": "number",
+                      "example": 0                   
+                    },
+                    "sequenciaEnergética": {
+                      "type": "number",
+                      "example": 0                   
+                    },
+                    "produtividade": {
+                      "type": "number",
+                      "example": 0                  
+                    },
+                    "lucratividade": {
+                      "type": "number",
+                      "example": 0                  
+                    },
+                    "liquidez": {
+                      "type": "number",
+                      "example": 0                   
+                    },
+                    "crescimento": {
+                      "type": "number",
+                      "example": 0                  
+                    },
+                    "rendimento": {
+                      "type": "number",
+                      "example": 0                  
+                    }
+                  }
+                }
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

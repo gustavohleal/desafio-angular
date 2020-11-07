@@ -26,10 +26,10 @@ const form = [
   {
     "titulo": "Estado Civil",
     "tipo": "select",
-    "valor": "",
+    "valor": "Solteiro(a)",
     "opcoes": [
-      "Casado(a)",
       "Solteiro(a)",
+      "Casado(a)",
       "União Estável",
       "Viúvo(a)"
     ]
@@ -37,7 +37,7 @@ const form = [
   {
     "titulo": "Arquivo",
     "tipo": "file",
-    "valor": "",
+    "valor": "teste.txt",
     "opcoes": []
   }
 

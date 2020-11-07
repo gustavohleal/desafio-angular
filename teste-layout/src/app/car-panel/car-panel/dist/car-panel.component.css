@@ -1,0 +1,506 @@
+body {
+  background: #2b2a2a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
+header,
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div header,
+main header {
+  padding-top: 0;
+}
+
+header {
+  text-align: center;
+}
+
+header a b,
+header a em,
+header a i,
+header a strong {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+header nav img {
+  margin: 1rem 0;
+}
+
+section header {
+  padding-top: 0;
+  width: 100%;
+}
+
+button {
+  border-radius: 5px;
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  padding: 1rem 2rem;
+  margin-right: 10px;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+button {
+  background-color: #118bee;
+  border: 2px solid #118bee;
+  color: #fff;
+}
+
+.header {
+  padding: 20px;
+}
+
+.headerIn {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  font-size: 14px;
+  width: 130px;
+  margin-right: 10px;
+  height: 100px;
+}
+
+#main-div {
+  width: 860px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top-left-radius: 360px;
+  border-top-right-radius: 360px;
+  border-bottom-left-radius: 240px;
+  border-bottom-right-radius: 240px;
+  background-color: #0f0f0f;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 10px 10px 10px 10px #2e2e2e inset;
+}
+
+@media only screen and (min-width: 761px) {
+  .layout-align {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+  }
+
+  #tesla-align {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .layout-align {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 25px 0;
+  }
+
+  #tesla-align {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.75);
+  }
+}
+/* Just for very small screen sizes */
+@media only screen and (max-width: 355px) {
+  .layout-align {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    transform: scale(0.8);
+  }
+
+  #tesla-align {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.6);
+  }
+}
+/* CSS for 3rd Meter */
+.score-meter {
+  transform: scale(0.8);
+}
+
+.score-meter {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: transparent;
+  position: relative;
+  background-color: #090909;
+  overflow: hidden !important;
+}
+
+#panel-center {
+  transform: scale(0.8);
+  width: 300px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  border: transparent;
+  position: relative;
+  overflow: hidden !important;
+  position: relative;
+}
+
+#panel-top-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid #3d3d3d;
+}
+
+#panel-middle-icons {
+  width: 100%;
+  height: 100%;
+}
+
+#panel-bottom-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  align-items: center;
+  border-top: 2px solid #3d3d3d;
+}
+
+#icons-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel-text {
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.score-meter svg {
+  width: 280px;
+  height: 280px;
+  z-index: 14;
+}
+
+#speedometer {
+  right: 80px;
+}
+
+#speedometer svg circle {
+  width: 280px;
+  height: 280px;
+  fill: none;
+  stroke-width: 5;
+  stroke: #333333;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+  z-index: 1;
+}
+
+#speedometer svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #333333;
+}
+
+#speedometer svg circle:nth-child(2) {
+  transform-origin: center center;
+  transform: rotate(145deg);
+  stroke-dashoffset: 275;
+  stroke: #117dff;
+}
+
+#rotations {
+  left: 80px;
+}
+
+#rotations svg circle {
+  width: 280px;
+  height: 280px;
+  fill: none;
+  stroke-width: 5;
+  stroke: #333333;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+  z-index: 1;
+}
+
+#rotations svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #333333;
+}
+
+#rotations svg circle:nth-child(2) {
+  transform-origin: center center;
+  transform: rotate(145deg);
+  stroke-dashoffset: 880;
+  stroke: #117dff;
+  transition-duration: 5s;
+}
+
+.inner-circle {
+  z-index: 15;
+  position: absolute !important;
+  color: #fff;
+  text-align: center;
+  width: 60%;
+  height: 60%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-top-left-radius: 360px;
+  border-top-right-radius: 360px;
+  display: flex;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  background: linear-gradient(to right, black, black), linear-gradient(90deg, #7a6676, rgba(122, 102, 118, 0.3), rgba(122, 102, 118, 0.8));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.scorer-main-tick {
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  width: 140px;
+  height: 5px;
+  background-image: linear-gradient(to right, #117dff, rgba(17, 125, 255, 0));
+  transform-origin: right center;
+  transform-origin: right center;
+  transition-duration: 5s;
+  z-index: 16;
+}
+
+#speedometer-main-tick {
+  transform: rotate(-35deg);
+}
+
+#rotations-main-tick {
+  transform: rotate(-35deg);
+}
+
+.scorer-tick {
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  width: 140px;
+  height: 10px;
+  transform-origin: right center;
+}
+
+.scorer-point {
+  width: 6px;
+  height: 6px;
+  margin-top: 2px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.scorer-text {
+  position: absolute;
+  margin-left: 7px;
+  margin-top: 5px;
+  bottom: -20px;
+  left: 10px;
+  color: #FFF;
+  display: block;
+  transform-origin: center;
+}
+
+#rotations-tick-1 {
+  transform: rotate(-35deg);
+}
+
+#rotations-tick-2 {
+  transform: rotate(0deg);
+}
+
+#rotations-tick-3 {
+  transform: rotate(45deg);
+}
+
+#rotations-tick-4 {
+  transform: rotate(90deg);
+}
+
+#rotations-tick-5 {
+  transform: rotate(135deg);
+}
+
+#rotations-tick-6 {
+  transform: rotate(180deg);
+}
+
+#rotations-tick-7 {
+  transform: rotate(215deg);
+}
+
+#rotations-text-1 {
+  transform: rotate(35deg);
+}
+
+#rotations-text-2 {
+  transform: rotate(0deg);
+}
+
+#rotations-text-3 {
+  transform: rotate(-45deg);
+}
+
+#rotations-text-4 {
+  transform: rotate(-90deg);
+}
+
+#rotations-text-5 {
+  transform: rotate(-135deg);
+}
+
+#rotations-text-6 {
+  transform: rotate(-180deg);
+}
+
+#rotations-text-7 {
+  transform: rotate(-215deg);
+}
+
+#scorer-tick-1 {
+  transform: rotate(-35deg);
+}
+
+#scorer-tick-2 {
+  transform: rotate(-5deg);
+}
+
+#scorer-tick-3 {
+  transform: rotate(25deg);
+}
+
+#scorer-tick-4 {
+  transform: rotate(55deg);
+}
+
+#scorer-tick-5 {
+  transform: rotate(90deg);
+}
+
+#scorer-tick-6 {
+  transform: rotate(125deg);
+}
+
+#scorer-tick-7 {
+  transform: rotate(155deg);
+}
+
+#scorer-tick-8 {
+  transform: rotate(185deg);
+}
+
+#scorer-tick-9 {
+  transform: rotate(215deg);
+}
+
+#scorer-text-1 {
+  transform: rotate(35deg);
+}
+
+#scorer-text-2 {
+  transform: rotate(5deg);
+}
+
+#scorer-text-3 {
+  transform: rotate(-25deg);
+}
+
+#scorer-text-4 {
+  transform: rotate(-55deg);
+}
+
+#scorer-text-5 {
+  transform: rotate(-90deg);
+}
+
+#scorer-text-6 {
+  transform: rotate(-125deg);
+}
+
+#scorer-text-7 {
+  transform: rotate(-155deg);
+}
+
+#scorer-text-8 {
+  transform: rotate(-185deg);
+}
+
+#scorer-text-9 {
+  transform: rotate(-215deg);
+}
+
+#tesla-logo {
+  width: 80px;
+  height: 80px;
+  width: 70%;
+  padding-left: 15%;
+  height: 70%;
+  padding-top: 15%;
+  height: auto;
+  margin: 0;
+}
+
+#speed-kmph-8 {
+  color: #fff;
+  width: 20%;
+  height: 10%;
+  font-size: 30px;
+}
+
+.white-icon {
+  color: white;
+}
+
+.red-icon {
+  color: #ad1b1b;
+}
+
+.yellow-icon {
+  color: #d1ce2c;
+}

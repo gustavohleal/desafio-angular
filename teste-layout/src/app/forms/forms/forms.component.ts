@@ -19,12 +19,13 @@ export class FormsComponent implements OnInit {
   @ViewChild('typeInput') typeInput : TemplateRef<any>;
 
   private formOptionsMemoryRelease;
+  private fileMemoryRelease;
 
   testForm:FormGroup;
   inputType:boolean = true;
   formOptions:Array<FormOptions>;
   formGroup:{[key: string]:any}  = {};
-
+  fileURL:string;
 
   constructor(
     private fb: FormBuilder,
@@ -32,19 +33,15 @@ export class FormsComponent implements OnInit {
     private formService: FormService,
 
   ) { 
-    this.testForm = this.fb.group({});
-
-    
+    this.testForm = this.fb.group({});    
   }
-
-
   ngOnInit(): void {
     this.formOptionsMemoryRelease = this.formService.getFormOptions()
       .subscribe((result:Array<FormOptions>) => {
         this.formOptions = result;
         this.testForm = this.fb.group(this.generateFormGroup(this.formOptions));
         Object.keys(this.testForm.controls).forEach(field => {
-          this.testForm.get(field).disable({ onlySelf: true });
+          this.testForm.get(field).disable();
         });
         
       })
@@ -59,17 +56,36 @@ export class FormsComponent implements OnInit {
 
   generateFormGroup(form:Array<FormOptions>){
 
-
+    let defaultValue = "";
     form.forEach(form => {
-      this.formGroup[form.titulo] = [form.valor, Validators.required];
+      if(this.checkSelect(form.tipo)) {
+        defaultValue = form.opcoes[0];
+      } else if(this.checkFile(form.tipo)){
+        defaultValue = "";
+        this.fileURL = this.formService.getFileURL(form.valor);
+      } else {
+        defaultValue = form.valor;
+      }
+      this.formGroup[form.titulo] = [defaultValue, Validators.required];
     });
     
     return this.formGroup;
   }
 
-  checkType(tipo:string){
-    if ( tipo !== 'select') return true;
+  checkSelect(tipo:string){
+    if ( tipo === 'select') return true;
     else return false;
   }
 
+  checkFile(tipo:string){
+    if ( tipo === 'file') return true;
+    else return false;
+  }
+
+
+  onClick(name:string){
+     return  this.formService.getFileURL(name);
+
+   
+  }
 }

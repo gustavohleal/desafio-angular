@@ -25,7 +25,7 @@ var FormsComponent = /** @class */ (function () {
             _this.formOptions = result;
             _this.testForm = _this.fb.group(_this.generateFormGroup(_this.formOptions));
             Object.keys(_this.testForm.controls).forEach(function (field) {
-                _this.testForm.get(field).disable({ onlySelf: true });
+                _this.testForm.get(field).disable();
             });
         })
             .add(function () {
@@ -36,16 +36,36 @@ var FormsComponent = /** @class */ (function () {
     };
     FormsComponent.prototype.generateFormGroup = function (form) {
         var _this = this;
+        var defaultValue = "";
         form.forEach(function (form) {
-            _this.formGroup[form.titulo] = [form.valor, forms_1.Validators.required];
+            if (_this.checkSelect(form.tipo)) {
+                defaultValue = form.opcoes[0];
+            }
+            else if (_this.checkFile(form.tipo)) {
+                defaultValue = "";
+                _this.fileURL = _this.formService.getFileURL(form.valor);
+            }
+            else {
+                defaultValue = form.valor;
+            }
+            _this.formGroup[form.titulo] = [defaultValue, forms_1.Validators.required];
         });
         return this.formGroup;
     };
-    FormsComponent.prototype.checkType = function (tipo) {
-        if (tipo !== 'select')
+    FormsComponent.prototype.checkSelect = function (tipo) {
+        if (tipo === 'select')
             return true;
         else
             return false;
+    };
+    FormsComponent.prototype.checkFile = function (tipo) {
+        if (tipo === 'file')
+            return true;
+        else
+            return false;
+    };
+    FormsComponent.prototype.onClick = function (name) {
+        return this.formService.getFileURL(name);
     };
     __decorate([
         core_1.ViewChild('typeInput')

@@ -3,9 +3,31 @@
       <ng-template [ngIf]="inputType">
         <div *ngFor = "let form of formOptions">
           <label> {{ form.titulo }} </label>
-          <input  *ngIf="checkType(form.tipo)" type={{form.tipo}} formControlName={{form.titulo}} value={{form.valor}}/>
-          <select *ngIf="!checkType(form.tipo)">
-            <option *ngFor = "let option of form.opcoes">{{option}}</option>
+
+          <input  
+            *ngIf="!checkSelect(form.tipo) && !checkFile(form.tipo)" 
+            type={{form.tipo}} 
+            formControlName={{form.titulo}}
+            value={{form.valor}}
+          />
+          
+          <input  
+            *ngIf="checkFile(form.tipo)" 
+            type={{form.tipo}} 
+            formControlName={{form.titulo}}
+            value=""
+          />
+
+          
+          <a *ngIf="checkFile(form.tipo)" [href]="this.fileURL" target="_blank" [download]="form.valor" class="button"> download</a>
+
+
+          <select *ngIf="checkSelect(form.tipo)">
+            <option 
+              *ngFor = "let option of form.opcoes; let i = index" 
+              [ngValue]="option" >
+                {{option}}
+            </option>
           </select>
         </div>
       </ng-template>

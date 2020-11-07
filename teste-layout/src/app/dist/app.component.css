@@ -1,39 +1,30 @@
 body {
-  background: var(#fff);
-  color: var(#000);
-  font-family: var(-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
-  line-height: var(1.5);
-  margin: 0;
+  background: #2b2a2a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
   overflow-x: hidden;
   padding: 1rem 0;
 }
 
-footer,
 header,
 main {
   margin: 0 auto;
-  max-width: var(1080px);
+  max-width: 1200px;
   padding: 2rem 1rem;
-}
-
-.container {
-  width: 70%;
-  height: 100%;
-  margin: auto;
   display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border: 1px solid #c0c0c0;
+  flex-direction: row;
+  justify-content: center;
 }
 
-article header,
 div header,
 main header {
   padding-top: 0;
 }
 
 header {
-  text-align: var(center);
+  text-align: center;
 }
 
 header a b,
@@ -53,67 +44,44 @@ section header {
   width: 100%;
 }
 
-a {
-  color: var(#920de9);
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:hover {
-  filter: brightness(var(1.2));
-  text-decoration: underline;
-}
-
-a b,
-a em,
-a i,
-a strong,
 button {
-  border-radius: var(5px);
+  border-radius: 5px;
   display: inline-block;
   font-size: medium;
   font-weight: bold;
-  line-height: var(1.5);
+  line-height: 1.5;
   margin: 0.5rem 0;
   padding: 1rem 2rem;
+  margin-right: 10px;
 }
 
 button {
-  font-family: var(-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 button:hover {
   cursor: pointer;
-  filter: brightness(var(1.2));
+  filter: brightness(1.2);
 }
 
-a b,
-a strong,
 button {
-  background-color: var(#118bee);
-  border: 2px solid var(#118bee);
-  color: var(#fff);
-}
-
-a em,
-a i {
-  border: 2px solid var(#118bee);
-  border-radius: var(5px);
-  color: var(#118bee);
-  display: inline-block;
-  padding: 1rem 2rem;
+  background-color: #118bee;
+  border: 2px solid #118bee;
+  color: #fff;
 }
 
 .header {
-  margin: 0 auto;
+  padding: 20px;
+}
+
+.headerIn {
   display: flex;
-  justify-content: start;
+  flex-direction: row;
 }
 
 .btn {
   font-size: 14px;
-  width: 200px;
-  border-radius: 10px;
-  margin-left: 10px;
+  width: 130px;
+  margin-right: 10px;
+  height: 100px;
 }

@@ -30,6 +30,10 @@ var FormService = /** @class */ (function () {
         return this.http.get(url, this.requestOptions)
             .pipe(operators_1.map(function (data) { return data; }));
     };
+    FormService.prototype.getFileURL = function (name) {
+        var url = this.baseUrl + "/arquivo/" + name;
+        return url;
+    };
     FormService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
