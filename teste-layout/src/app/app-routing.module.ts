@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'forms', 
     loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
     data:{breadcrumb:null}
+  },
+  { 
+    path: 'tabela', 
+    loadChildren: () => import('./table/table.module').then(m => m.TableModule),
+    data:{breadcrumb:null}
   }, 
 
 ];

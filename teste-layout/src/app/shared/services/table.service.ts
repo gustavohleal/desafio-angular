@@ -8,7 +8,7 @@ import { tap, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class TableService {
 
   constructor(
     private http:HttpClient,
@@ -26,8 +26,8 @@ export class FormService {
     headers: new HttpHeaders  (this.headerDict), 
   };
 
-  getFormOptions(){
-    let url = `${this.baseUrl}/formulario`;
+  getTable(){
+    let url = `${this.baseUrl}/tabela`;
     return this.http.get(url, this.requestOptions)
       .pipe(
         map(data=>data)

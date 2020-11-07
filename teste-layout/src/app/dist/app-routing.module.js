@@ -20,6 +20,11 @@ var routes = [
         loadChildren: function () { return Promise.resolve().then(function () { return require('./forms/forms.module'); }).then(function (m) { return m.FormsModule; }); },
         data: { breadcrumb: null }
     },
+    {
+        path: 'tabela',
+        loadChildren: function () { return Promise.resolve().then(function () { return require('./table/table.module'); }).then(function (m) { return m.TableModule; }); },
+        data: { breadcrumb: null }
+    },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

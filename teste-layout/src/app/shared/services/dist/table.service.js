@@ -6,13 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.FormService = void 0;
+exports.TableService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
 var environment_1 = require("src/environments/environment");
 var operators_1 = require("rxjs/operators");
-var FormService = /** @class */ (function () {
-    function FormService(http, router) {
+var TableService = /** @class */ (function () {
+    function TableService(http, router) {
         this.http = http;
         this.router = router;
         this.baseUrl = environment_1.environment.apiURL;
@@ -25,16 +25,16 @@ var FormService = /** @class */ (function () {
             headers: new http_1.HttpHeaders(this.headerDict)
         };
     }
-    FormService.prototype.getFormOptions = function () {
-        var url = this.baseUrl + "/formulario";
+    TableService.prototype.getTable = function () {
+        var url = this.baseUrl + "/tabela";
         return this.http.get(url, this.requestOptions)
             .pipe(operators_1.map(function (data) { return data; }));
     };
-    FormService = __decorate([
+    TableService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         })
-    ], FormService);
-    return FormService;
+    ], TableService);
+    return TableService;
 }());
-exports.FormService = FormService;
+exports.TableService = TableService;

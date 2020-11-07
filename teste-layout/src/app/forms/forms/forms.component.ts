@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
-import { FormGroup, Validators, FormBuilder, FormControl, Form } from "@angular/forms";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Router } from '@angular/router';
 
 
@@ -43,6 +43,10 @@ export class FormsComponent implements OnInit {
       .subscribe((result:Array<FormOptions>) => {
         this.formOptions = result;
         this.testForm = this.fb.group(this.generateFormGroup(this.formOptions));
+        Object.keys(this.testForm.controls).forEach(field => {
+          this.testForm.get(field).disable({ onlySelf: true });
+        });
+        
       })
       .add(()=>{
         this.formOptionsMemoryRelease.unsubscribe();
@@ -59,6 +63,7 @@ export class FormsComponent implements OnInit {
     form.forEach(form => {
       this.formGroup[form.titulo] = [form.valor, Validators.required];
     });
+    
     return this.formGroup;
   }
 

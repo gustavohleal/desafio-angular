@@ -1,0 +1,17 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let head of tableKeys"> {{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of table">
+        <td *ngFor="let head of tableKeys" > {{ row[head] }} </td>
+      </tr>
+
+    </tbody>
+
+    
+  </table>
+</div>
