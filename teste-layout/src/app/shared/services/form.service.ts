@@ -28,15 +28,10 @@ export class FormService {
 
   getFormOptions(){
     let url = `${this.baseUrl}/formulario`;
-    return this.http.get(url, this.requestOptions)
-      .pipe(
-        map(data=>data)
-      )    
+    return this.http.get(url, this.requestOptions);   
   }
 
   getFileURL(name:string){
-    let url = `${this.baseUrl}/arquivo/${name}`;
-
-    return url;
+    return `${this.baseUrl}/arquivo/${name}`;
   }
 }

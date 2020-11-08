@@ -10,7 +10,6 @@ exports.FormService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
 var environment_1 = require("src/environments/environment");
-var operators_1 = require("rxjs/operators");
 var FormService = /** @class */ (function () {
     function FormService(http, router) {
         this.http = http;
@@ -27,12 +26,10 @@ var FormService = /** @class */ (function () {
     }
     FormService.prototype.getFormOptions = function () {
         var url = this.baseUrl + "/formulario";
-        return this.http.get(url, this.requestOptions)
-            .pipe(operators_1.map(function (data) { return data; }));
+        return this.http.get(url, this.requestOptions);
     };
     FormService.prototype.getFileURL = function (name) {
-        var url = this.baseUrl + "/arquivo/" + name;
-        return url;
+        return this.baseUrl + "/arquivo/" + name;
     };
     FormService = __decorate([
         core_1.Injectable({

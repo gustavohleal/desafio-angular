@@ -15,4 +15,9 @@ export class AppComponent {
     private activatedRoute:ActivatedRoute,
     private router:Router
   ){}
+
+
+  onClick(rota:string){
+    this.router.navigate([rota]);
+  }
 }

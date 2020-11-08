@@ -14,6 +14,9 @@ var AppComponent = /** @class */ (function () {
         this.router = router;
         this.title = 'Desafio Angular';
     }
+    AppComponent.prototype.onClick = function (rota) {
+        this.router.navigate([rota]);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',

@@ -10,7 +10,6 @@ exports.TableService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
 var environment_1 = require("src/environments/environment");
-var operators_1 = require("rxjs/operators");
 var TableService = /** @class */ (function () {
     function TableService(http, router) {
         this.http = http;
@@ -27,8 +26,7 @@ var TableService = /** @class */ (function () {
     }
     TableService.prototype.getTable = function () {
         var url = this.baseUrl + "/tabela";
-        return this.http.get(url, this.requestOptions)
-            .pipe(operators_1.map(function (data) { return data; }));
+        return this.http.get(url, this.requestOptions);
     };
     TableService = __decorate([
         core_1.Injectable({

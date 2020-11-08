@@ -24,9 +24,7 @@ var FormsComponent = /** @class */ (function () {
             .subscribe(function (result) {
             _this.formOptions = result;
             _this.testForm = _this.fb.group(_this.generateFormGroup(_this.formOptions));
-            Object.keys(_this.testForm.controls).forEach(function (field) {
-                _this.testForm.get(field).disable();
-            });
+            _this.testForm.disable();
         })
             .add(function () {
             _this.formOptionsMemoryRelease.unsubscribe();

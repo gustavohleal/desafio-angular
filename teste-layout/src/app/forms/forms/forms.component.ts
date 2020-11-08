@@ -40,10 +40,7 @@ export class FormsComponent implements OnInit {
       .subscribe((result:Array<FormOptions>) => {
         this.formOptions = result;
         this.testForm = this.fb.group(this.generateFormGroup(this.formOptions));
-        Object.keys(this.testForm.controls).forEach(field => {
-          this.testForm.get(field).disable();
-        });
-        
+        this.testForm.disable();        
       })
       .add(()=>{
         this.formOptionsMemoryRelease.unsubscribe();

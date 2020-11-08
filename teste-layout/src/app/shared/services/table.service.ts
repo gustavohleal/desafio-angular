@@ -28,9 +28,6 @@ export class TableService {
 
   getTable(){
     let url = `${this.baseUrl}/tabela`;
-    return this.http.get(url, this.requestOptions)
-      .pipe(
-        map(data=>data)
-      )    
+    return this.http.get(url, this.requestOptions);    
   }
 }
